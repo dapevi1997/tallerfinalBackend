@@ -1,5 +1,6 @@
 package com.sofka.service;
 
+import com.sofka.domain.Game;
 import com.sofka.domain.Lobby;
 import com.sofka.domain.NumberBlackboard;
 
@@ -21,4 +22,10 @@ public interface INumberBlackboardService {
      * @return Lista de contactos.
      */
     List<NumberBlackboard> list();
+    /**
+     * Método para guardar un contacto.
+     * @param numberBlackboard Contacto a guardar.
+     * @return Contacto guardado.
+     */
+    NumberBlackboard save(NumberBlackboard numberBlackboard);
 }
