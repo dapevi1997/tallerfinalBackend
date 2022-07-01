@@ -38,7 +38,7 @@ public class NumberBlackboardController {
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping(path = "/numbersBlackboard/game/{id}")
-    public List<String> listGamersIntoLobby(@PathVariable("id") int id) {
+    public List<String> listNumbersInBlakcboard(@PathVariable("id") int id) {
 
         return numberBlanckboardService.numbersBlackboard(id);
     }

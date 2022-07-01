@@ -1,6 +1,7 @@
 package com.sofka.service;
 
 
+import com.sofka.domain.NumberBlackboard;
 import com.sofka.domain.NumberPaperboard;
 
 import java.util.List;
@@ -16,4 +17,10 @@ public interface INumberPaperboardService {
      * @param game Contacto a guardar.
      * @return Contacto guardado.
      */
+    /**
+     * Método para guardar un contacto.
+     * @param numberPaperboard Contacto a guardar.
+     * @return Contacto guardado.
+     */
+    NumberPaperboard save(NumberPaperboard numberPaperboard);
 }

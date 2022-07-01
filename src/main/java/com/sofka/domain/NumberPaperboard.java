@@ -29,5 +29,5 @@ public class NumberPaperboard implements Serializable {
      * Referencia del campo con_number de la tabla.
      */
     @Column(name = "gamer_gam_id")
-    private String gamerId;
+    private int gamerId;
 }
