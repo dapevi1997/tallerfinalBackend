@@ -1,8 +1,12 @@
 package com.sofka.domain;
 
 import lombok.Data;
-
-import javax.persistence.*;
+import  javax.persistence.Entity;
+import  javax.persistence.Table;
+import  javax.persistence.Id;
+import  javax.persistence.GeneratedValue;
+import  javax.persistence.GenerationType;
+import  javax.persistence.Column;
 import java.io.Serializable;
 
 @Data
@@ -21,12 +25,12 @@ public class NumberPaperboard implements Serializable {
     @Column(name = "npa_id")
     private Long id;
     /**
-     * Referencia del campo con_name de la tabla.
+     * Referencia del campo npa_number de la tabla.
      */
     @Column(name = "npa_number")
     private String number;
     /**
-     * Referencia del campo con_number de la tabla.
+     * Referencia del campo gamer_gam_id de la tabla.
      */
     @Column(name = "gamer_gam_id")
     private int gamerId;

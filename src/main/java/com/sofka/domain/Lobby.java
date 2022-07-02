@@ -1,14 +1,18 @@
 package com.sofka.domain;
 
 import lombok.Data;
-
-import javax.persistence.*;
+import  javax.persistence.Entity;
+import  javax.persistence.Table;
+import  javax.persistence.Id;
+import  javax.persistence.GeneratedValue;
+import  javax.persistence.GenerationType;
+import  javax.persistence.Column;
 import java.io.Serializable;
 
 /**
- * Clase refernciar una tabla SQL a objetos.
+ * Clase referenciar una tabla SQL a objetos.
  *
- * @version 1.0.0 2022-06-26
+ * @version 1.0.0 2022-07-02
  *
  * @author DANIEL PEREZ VITOLA - dapevi97@gmail.com
  *
@@ -31,7 +35,7 @@ public class Lobby implements Serializable {
     @Column(name = "lob_id")
     private Long id;
     /**
-     * Referencia del campo con_name de la tabla.
+     * Referencia del campo lob_actived de la tabla.
      */
     @Column(name = "lob_actived")
     private String actived;

@@ -15,9 +15,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Clase para establecer los controladores.
+ * Clase para establecer los controladores para manejar la tabla que guarda los
+ * lobbies creados.
  *
- * @version 1.0.0 2022-06-26
+ * @version 1.0.0 2022-07-02
  *
  * @author DANIEL PEREZ VITOLA - dapevi97@gmail.com
  *
@@ -29,14 +30,15 @@ import java.util.Optional;
 public class LobbyController {
 
     /**
-     * Inyección del servicio para tratar la tabla contactos.
+     * Inyección del servicio para tratar la tabla que almacena los lobbies que se han
+     * creado.
      */
     @Autowired
     private LobbyService lobbyService;
 
     /**
-     * API GET para obtener la lista de contactos guardados.
-     * @return Array de contactos.
+     * API GET para obtener la lista de lobbies guardados.
+     * @return Array de lobbies.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping(path = "/lobby")
@@ -46,9 +48,9 @@ public class LobbyController {
     }
 
     /**
-     * API GET para obtener la lista de contactos guardados.
+     * API GET para saber si hay algún lobby activo.
      *
-     * @return Array de contactos.
+     * @return Lobby activo.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping(path = "/isLobbieActived")
@@ -58,9 +60,9 @@ public class LobbyController {
     }
 
     /**
-     * API POST que permite crear un contacto.
-     * @param lobby Información de un contacto contenida en el objeto.
-     * @return Contacto y respuesta de creado.
+     * API POST que permite crear un Lobby.
+     * @param lobby Información de un lobby contenida en el objeto.
+     * @return Lobby y respuesta de creado.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @PostMapping(path = "/lobby")
