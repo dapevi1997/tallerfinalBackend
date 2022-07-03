@@ -1,6 +1,7 @@
 package com.sofka.service;
 
 import com.sofka.dao.LobbyDao;
+import com.sofka.domain.Barprogress;
 import com.sofka.domain.Lobby;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,5 +58,15 @@ public class LobbyService implements ILobbyService{
     public Lobby save(Lobby lobby) {
 
         return lobbyDao.save(lobby);
+    }
+    /**
+     * Servicio para actualizar el nombre de un contacto.
+     * @param id Id del lobby.
+     * @param lobby Contacto con el nombre actualizado.
+     */
+    @Transactional
+    public void updateLobbyActived(Long id, Lobby lobby){
+
+        lobbyDao.updateLobbyActived(id, lobby.getActived());
     }
 }

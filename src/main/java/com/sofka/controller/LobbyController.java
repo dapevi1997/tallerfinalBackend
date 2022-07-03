@@ -1,15 +1,13 @@
 package com.sofka.controller;
 
+import com.sofka.domain.Barprogress;
 import com.sofka.domain.Lobby;
 import com.sofka.service.LobbyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -69,5 +67,18 @@ public class LobbyController {
     public ResponseEntity<Lobby> toCreate(Lobby lobby) {
         lobbyService.save(lobby);
         return new ResponseEntity<>(lobby, HttpStatus.CREATED);
+    }
+    /**
+     * API PATCH para actualizar el nombre del contacto.
+     * @param lobby Contacto al que se le va a actualizar el nombre.
+     * @param id Id del contacto al que se le va a actualizar el nombre.
+     * @return Contacto con el nombre actualizado.
+     */
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @PatchMapping(path = "/activated/lobby/{id}")
+    public ResponseEntity<Lobby> toUpdateActived(Lobby lobby, @PathVariable("id") Long id) {
+        lobbyService.updateLobbyActived(id,lobby);
+        return new ResponseEntity<>(lobby, HttpStatus.OK);
+
     }
 }

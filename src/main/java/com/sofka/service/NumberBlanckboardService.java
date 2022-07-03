@@ -42,6 +42,7 @@ public class NumberBlanckboardService implements INumberBlackboardService{
      */
     @Transactional(readOnly = true)
     public List<String> numbersBlackboard(int id){
+
         return numberBlackboardDao.numbersBlackboard(id);
     }
     /**
