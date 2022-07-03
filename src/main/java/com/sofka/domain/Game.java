@@ -42,7 +42,7 @@ public class Game implements Serializable {
     /**
      * Referencia del campo gam_winner_email de la tabla.
      */
-    @Column(name = "gam_winner_email")
+    @Column(name = "gam_winner_id")
     private String email;
     /**
      * Referencia del campo lobby_lob_id de la tabla.

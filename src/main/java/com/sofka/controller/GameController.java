@@ -1,15 +1,14 @@
 package com.sofka.controller;
 
 import com.sofka.domain.Game;
+import com.sofka.domain.Lobby;
 import com.sofka.service.GameService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -51,5 +50,41 @@ public class GameController {
     public ResponseEntity<Game> toCreate(Game game) {
         gameService.save( game);
         return new ResponseEntity<>(game, HttpStatus.CREATED);
+    }
+    /**
+     * API PATCH para actualizar el nombre del contacto.
+     * @param game Contacto al que se le va a actualizar el nombre.
+     * @param id Id del contacto al que se le va a actualizar el nombre.
+     * @return Contacto con el nombre actualizado.
+     */
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @PatchMapping(path = "/finished/game/{id}")
+    public ResponseEntity<Game> toUpdateGameFinish(Game game, @PathVariable("id") Long id) {
+        gameService.updateGameFinished(id,game);
+        return new ResponseEntity<>(game, HttpStatus.OK);
+
+    }
+    /**
+     * API PATCH para actualizar el nombre del contacto.
+     * @param game Contacto al que se le va a actualizar el nombre.
+     * @param id Id del contacto al que se le va a actualizar el nombre.
+     * @return Contacto con el nombre actualizado.
+     */
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @PatchMapping(path = "/idWinner/game/{id}")
+    public ResponseEntity<Game> toUpdateIdWinner(Game game, @PathVariable("id") Long id) {
+        gameService.updateIdWinner(id,game);
+        return new ResponseEntity<>(game, HttpStatus.OK);
+
+    }
+    /**
+     * API GET para obtener la lista de números guardados para cierto juego.
+     * @return Array de números según el id del juego.
+     */
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @GetMapping(path = "/idWinner/game/{id}")
+    public String idWinner(@PathVariable("id") Long id) {
+
+        return gameService.idWinner(id);
     }
 }
