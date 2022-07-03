@@ -1,9 +1,7 @@
 package com.sofka.service;
 
 import com.sofka.domain.Barprogress;
-import com.sofka.domain.Gamer;
 
-import java.util.Optional;
 
 /**
  * Interface para estructurar servicios de la barra de progreso.
@@ -17,9 +15,9 @@ import java.util.Optional;
  */
 public interface IBarprogressService {
     /**
-     * Método para guardar un jugador.
-     * @param barprogress Jugador a guardar.
-     * @return Jugador guardado.
+     * Método para guardar una barra de progreso.
+     * @param barprogress Barra de progreso a guardar.
+     * @return Barra de progreso guardada.
      */
     Barprogress save(Barprogress barprogress);
 

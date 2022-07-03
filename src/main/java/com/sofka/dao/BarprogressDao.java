@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
 
 /**
  * Interface para guardar y obtener progreso de la barra de espera.
@@ -21,15 +20,16 @@ import java.util.List;
  */
 public interface BarprogressDao extends CrudRepository<Barprogress,Long> {
     /**
-     * Consulta para modificar el nombre del contacto.
-     * @param id Id del contacto al que se le modificará el nombre.
-     * @param var Nuevo nombre.
+     * Consulta para modificar el atributo var de la tabla que contiene información de la
+     * barra de progreso.
+     * @param id Id del lobby.
+     * @param var Nuevo valor.
      */
     @Modifying
     @Query("update Barprogress bar set bar.var = :var where bar.idLobby=:id")
     void updateVar(@Param(value = "id") int id, @Param(value = "var") int var);
     /**
-     * Consulta para extraer los números del tablero según el id del juego.
+     * Consulta para obtener el valor actual de la variable que guarda el progreso de la barra.
      */
     @Query("SELECT bar.var from Barprogress bar where bar.idLobby=:idLobby")
     String var(@Param(value = "idLobby") int idLobby);

@@ -1,17 +1,14 @@
 package com.sofka.controller;
 
 import com.sofka.domain.Barprogress;
-import com.sofka.domain.Game;
 import com.sofka.service.BarprogressService;
-import com.sofka.service.GameService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+
 
 /**
  * Clase que contiene los controladores para las APIs relacionadas con la tabla que contiene
@@ -45,10 +42,10 @@ public class BarprogressController {
         return new ResponseEntity<>(barprogress, HttpStatus.CREATED);
     }
     /**
-     * API PATCH para actualizar el nombre del contacto.
-     * @param barprogress Contacto al que se le va a actualizar el nombre.
-     * @param id Id del contacto al que se le va a actualizar el nombre.
-     * @return Contacto con el nombre actualizado.
+     * API PATCH para actualizar el valor de la barra de progreso.
+     * @param barprogress Variable al que se le va a actualizar el valor.
+     * @param id Id del lobby que contiene la barra de progreso.
+     * @return Variable con el valor actualizado.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/bar/lobby/{id}")
@@ -58,7 +55,7 @@ public class BarprogressController {
 
     }
     /**
-     * API GET para obtener la lista de números guardados para cierto juego.
+     * API GET para obtener el valor de la variable de la barra de progreso.
      * @return Array de números según el id del juego.
      */
     @CrossOrigin(origins = "http://localhost:3000/")

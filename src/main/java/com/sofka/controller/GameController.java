@@ -52,10 +52,10 @@ public class GameController {
         return new ResponseEntity<>(game, HttpStatus.CREATED);
     }
     /**
-     * API PATCH para actualizar el nombre del contacto.
-     * @param game Contacto al que se le va a actualizar el nombre.
-     * @param id Id del contacto al que se le va a actualizar el nombre.
-     * @return Contacto con el nombre actualizado.
+     * API PATCH para actualizar el estado del juego.
+     * @param game Juego al que se le va a actualizar.
+     * @param id Id del juego.
+     * @return Juego actualizado.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/finished/game/{id}")
@@ -65,10 +65,10 @@ public class GameController {
 
     }
     /**
-     * API PATCH para actualizar el nombre del contacto.
-     * @param game Contacto al que se le va a actualizar el nombre.
-     * @param id Id del contacto al que se le va a actualizar el nombre.
-     * @return Contacto con el nombre actualizado.
+     * API PATCH para actualizar el id del ganador.
+     * @param game Juego al que se le va a actualizar el ganador.
+     * @param id Id del juego al que se le va a actualizar el ganador.
+     * @return Juego con el ganador actualizado.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/idWinner/game/{id}")
@@ -78,8 +78,8 @@ public class GameController {
 
     }
     /**
-     * API GET para obtener la lista de números guardados para cierto juego.
-     * @return Array de números según el id del juego.
+     * API GET para obtener el id del ganador del juego.
+     * @return Id deñ ganador del juego.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping(path = "/idWinner/game/{id}")
@@ -88,8 +88,8 @@ public class GameController {
         return gameService.idWinner(id);
     }
     /**
-     * API GET para obtener la lista de números guardados para cierto juego.
-     * @return Array de números según el id del juego.
+     * API GET para obtener el lobby de cierto juego.
+     * @return Id del juego.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping(path = "/idGame/game/{idLobby}")

@@ -69,10 +69,10 @@ public class LobbyController {
         return new ResponseEntity<>(lobby, HttpStatus.CREATED);
     }
     /**
-     * API PATCH para actualizar el nombre del contacto.
-     * @param lobby Contacto al que se le va a actualizar el nombre.
-     * @param id Id del contacto al que se le va a actualizar el nombre.
-     * @return Contacto con el nombre actualizado.
+     * API PATCH para actualizar el estado del lobby.
+     * @param lobby Lobby al que se le va a actualizar el estado.
+     * @param id Id del lobby al que se le va a actualizar el estado.
+     * @return Lobby con el estado actualizado.
      */
     @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/activated/lobby/{id}")
