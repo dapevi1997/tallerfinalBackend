@@ -87,4 +87,14 @@ public class GameController {
 
         return gameService.idWinner(id);
     }
+    /**
+     * API GET para obtener la lista de números guardados para cierto juego.
+     * @return Array de números según el id del juego.
+     */
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @GetMapping(path = "/idGame/game/{idLobby}")
+    public String isLobby(@PathVariable("idLobby") int idLobby) {
+
+        return gameService.isLobby(idLobby);
+    }
 }

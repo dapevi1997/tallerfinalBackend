@@ -41,5 +41,10 @@ public interface GameDao extends CrudRepository<Game, Long> {
      */
     @Query("SELECT gam.email from Game gam where gam.id=:id")
     String idWinner(@Param(value = "id") Long id);
+    /**
+     * Consulta para extraer los números del tablero según el id del juego.
+     */
+    @Query("SELECT gam.id from Game gam where gam.lobbyId=:idLobby")
+    String isLobby(@Param(value = "idLobby") int idLobby);
 
 }

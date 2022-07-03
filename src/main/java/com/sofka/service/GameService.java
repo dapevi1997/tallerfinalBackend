@@ -80,4 +80,14 @@ public class GameService implements IGameService {
 
         return gameDao.idWinner(id);
     }
+    /**
+     * Servicio para obtener la lista números en un determinado tablero.
+     * @param idLobby Id del tablero
+     * @return Números en el tablero
+     */
+    @Transactional(readOnly = true)
+    public String isLobby(int idLobby){
+
+        return gameDao.isLobby(idLobby);
+    }
 }
