@@ -3,7 +3,7 @@
 Nota: es necesario montar el backend en el puerto 8080 para
 no tener problema con los cors.
 
-Video: https://youtu.be/PCwWnOmzZ7A
+Video: https://youtu.be/4hpodG8q2f8
 
 # Habilitación del LiveReload cuando sea posible
 spring.devtools.livereload.enabled = true
